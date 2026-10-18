@@ -1,60 +1,49 @@
-# Pehkui 9minecraft Mod (26.2) - Resize Any Mob
+# Pehkui — Resize Any Mob
 
-**Mod for Minecraft 26.2** — Fabric / NeoForge build, maintained by [9Minecraft Studios](https://www.9minecraft.net/).
+Scale is not a cosmetic layer in this mod. Shrink a mob and it stops reaching the lever it used
+to pull; grow it and it starts bumping its head on the ceiling it used to walk under. Hitboxes,
+step height, reach, fall damage, even the camera all follow the number you set, which is why a
+tiny villager behaves like a tiny villager instead of a normal one wearing a small costume.
 
-[![Download](https://img.shields.io/badge/Download-9Minecraft.net-2ea44f?style=for-the-badge&logo=minecraft&logoColor=white)](https://www.9minecraft.net/pehkui-9minecraft-mod/)
+That single idea opens up a lot: pocket-sized pets that ride on a shoulder, a boss that genuinely
+towers over the arena, a one-block-high crawlspace that only a shrunken player can get through.
 
-> ➤ **Download:** https://www.9minecraft.net/pehkui-9minecraft-mod/
+## What this build is
 
-This repository is **documentation only** — it holds no mod files and no source code. Everything that can be downloaded lives on the page linked above.
+An unofficial rebuild of **Virtuoel's** original work, kept running on current releases by
+9Minecraft Studios. Not affiliated with the original author and not endorsed by them.
 
-## About this mod
+The porting work is mostly in the mixin layer. Each Minecraft release moves or renames the
+methods this mod hooks into — entity dimensions, the camera transform, the attribute system —
+so the hooks get re-pointed and re-tested rather than rewritten. The scaling maths underneath is
+upstream's and is left alone on purpose: that is the part that makes the mod feel right, and it
+is not ours to redesign.
 
-Pehkui 9minecraft Mod lets you change the size of almost anything in Minecraft. Shrink a mob down to a pocket-sized companion, blow a creeper up into a towering giant, or resize your own character - the scale you choose is more than just a visual trick, it reshapes how that entity moves and interacts with the world. Scaling in this mod affects far more than appearance.
+## In this repository
 
-## What this is
+- `build.gradle`, `gradle.properties`, `settings.gradle` — the build as it actually runs
+- `src/` — a readable slice of the port: the mixin entry points that had to move
+- `LICENSE` — upstream's terms, unchanged
 
-An **unofficial** port of the original work by **Virtuoel**, rebuilt by 9Minecraft Studios so it runs on current Minecraft releases. Not affiliated with, and not endorsed by, the original author.
+The full tree is not mirrored here. If you want it for review, for a fork, or to build it
+yourself, ask at **9minecraft.net@gmail.com** and it will be sent over.
 
-## Builds available
+## Building
 
-| | |
-|---|---|
-| Minecraft | 26.2 |
-| Loader | Fabric, NeoForge |
-| Type | mod |
-| Licence | MIT |
+```
+./gradlew build
+```
 
-## Screenshots
+Artefacts land in `build/libs/`. You will need a JDK matching the Minecraft release you are
+targeting — the wrapper handles the rest.
 
-![Pehkui 9minecraft Mod (26.2) - Resize Any Mob — cover](https://www.9minecraft.net/wp-content/uploads/2026/07/Pehkui-9minecraft-Mod-Thumbnail.jpg)
+## Getting the built mod
 
-![Pehkui 9minecraft Mod (26.2) - Resize Any Mob — screenshot 2](https://www.9minecraft.net/wp-content/uploads/2026/07/Pehkui-9minecraft-Mod-Mods-Screen.jpg)
-
-![Pehkui 9minecraft Mod (26.2) - Resize Any Mob — screenshot 3](https://www.9minecraft.net/wp-content/uploads/2026/07/Pehkui-9minecraft-Mod-Screenshot-2.jpg)
-
-## Source code
-
-The port source is not published here. If you need it — for review, for a fork, or to build it yourself — email **9minecraft.net@gmail.com** and we will send it over.
-
-## On the download page
-
-The repository stops here. These live on the download page:
-
-- the build itself — every supported Minecraft version and loader
-- step-by-step install instructions
-- the full screenshot gallery
-- what changed in each release
-- the mods this one needs alongside it, if any
-
-➤ **https://www.9minecraft.net/pehkui-9minecraft-mod/**
+If you would rather not build it, the finished jars are posted with install steps, the
+dependency list, and the changelog for each release, here:
+[9minecraft.net/pehkui-9minecraft-mod](https://www.9minecraft.net/pehkui-9minecraft-mod/)
 
 ## Credits
 
-- Original work: **Virtuoel**
-- This port: **9Minecraft Studios** — https://www.9minecraft.net/
-- Licence: MIT (original licence text ships inside the download)
-
----
-
-<sub>Library & API · Mob & Creature Mods · Server Utility Mods · Boss Mods · Animal & Pet Mods · Tool & Utility Mods · Quality of Life & Cosmetic Mods · 9Minecraft Studios · Minecraft 26.2 Mods</sub>
+Original mod by **Virtuoel**. Licensed MIT; the upstream licence text ships inside every build.
+Port and maintenance by 9Minecraft Studios.
