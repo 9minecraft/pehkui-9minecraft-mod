@@ -37,6 +37,13 @@ yourself, ask at **9minecraft.net@gmail.com** and it will be sent over.
 Artefacts land in `build/libs/`. You will need a JDK matching the Minecraft release you are
 targeting — the wrapper handles the rest.
 
+## Versions
+
+| Minecraft | Loader |
+|---|---|
+| 26.3 | Fabric, NeoForge |
+| 26.2 | Fabric, NeoForge |
+
 ## Getting the built mod
 
 If you would rather not build it, the finished jars are posted with install steps, the
